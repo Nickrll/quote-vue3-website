@@ -1,7 +1,6 @@
 <template>
   <div class="header">
     <Navbar></Navbar>
-    <h1>Header</h1>
   </div>
 </template>
 <script>
@@ -10,8 +9,8 @@ export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Header",
   components: {
-    Navbar
-},
+    Navbar,
+  },
 };
 </script>
 
@@ -25,6 +24,25 @@ export default {
   width: calc(100vw - 60px);
   height: 450px;
   display: inline-block;
-  border-radius: 20px, 0px, 0px, 20px;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  h1,
+  h2 {
+    color: #fff;
+    text-align: left;
+  }
+  h1 {
+    font-family: Zilla Slab;
+  }
+  h2 {
+    font-family: Peddana;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    width: 100vw;
+    border-radius: 0px;
+  }
 }
 </style>
