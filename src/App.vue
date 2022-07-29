@@ -1,12 +1,16 @@
 <template>
   <div>
-    Hello world
+    <Header></Header>
+    <router-view/>
   </div>
 </template>
 <script>
+import Header from './components/Header.vue'
 export default {
   name: "App",
-  components: {},
+  components: {
+    Header
+},
 };
 </script>
 
@@ -15,8 +19,14 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  float: left;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 0;
 }
+
+body {
+  margin: 30px;
+}
+
 </style>

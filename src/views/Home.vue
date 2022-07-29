@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <h1>Home</h1>
+    <h1>The app</h1>
+    <p>dsadsdsds</p>
   </div>
 </template>
 <script>
@@ -11,5 +12,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.home {
+ h1 {
+    padding-left: 30px;
+    float: left;
+ }
+
+ p {
+    padding-left: 30px;
+    float: left;
+ }
+}
 
 </style>
