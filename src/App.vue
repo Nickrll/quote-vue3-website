@@ -29,7 +29,7 @@ body {
   margin: 30px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 624px) {
     body {
       margin: 0px;
     }

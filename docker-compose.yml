@@ -1,0 +1,12 @@
+version: "3.4"
+services:
+  my_frontend:
+    container_name: quote-frontend-app
+    image: node:lts
+    working_dir: /var/www/html/app/
+    entrypoint: /bin/bash
+    expose:
+      - 8080:80
+    volumes:
+      - ./frontend/:/var/www/html/app
+    tty: true

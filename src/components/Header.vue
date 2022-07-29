@@ -39,7 +39,7 @@ export default {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 624px) {
   .header {
     width: 100vw;
     border-radius: 0px;

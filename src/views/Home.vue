@@ -7,22 +7,60 @@
     <div class="home-information">
       <h1>The app</h1>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer elit
-        sapien, eleifend vitae felis sed, fringilla bibendum tortor. Nullam a
-        cursus nulla. Nam fringilla sem arcu, at euismod lacus placerat quis.
-        Curabitur venenatis pharetra leo, sit amet accumsan mauris luctus in.
-        Duis molestie sem nec efficitur fermentum. Vestibulum iaculis sem magna,
-        sed condimentum enim porta quis. In tempor pharetra blandit. Vivamus
-        consequat, arcu eget ultricies finibus, sem metus lobortis nibh, ac
-        pellentesque metus turpis in enim.
+        This app is made with the help of
+        http://quotes.stormconsultancy.co.uk/api as a coding challenge. The main
+        features are extended from the storm consultency api. Following below
+        are examples of what this app can do.
       </p>
+      <Content
+        class="ref-block"
+        :head="this.comp1.head"
+        :para="this.comp1.para"
+      ></Content>
+      <Content
+        class="ref-block"
+        :head="this.comp2.head"
+        :para="this.comp2.para"
+      ></Content>
+      <Content
+        class="ref-block"
+        :head="this.comp3.head"
+        :para="this.comp3.para"
+      ></Content>
+      <Content
+        class="ref-block"
+        :head="this.comp4.head"
+        :para="this.comp4.para"
+      ></Content>
     </div>
   </div>
 </template>
 <script>
+import Content from "../components/Content.vue";
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Home",
+  components: { Content },
+  data() {
+    return {
+      comp1: {
+        head: "By ID",
+        para: "Using this button a quote can be looked up based on an ID",
+      },
+      comp2: {
+        head: "Random",
+        para: "A random quote can be looked up. By clicking on the nav button a fresh random quote will be found",
+      },
+      comp3: {
+        head: "Popular",
+        para: "All popular quotes will be gotten. They are ordered on ID",
+      },
+      comp4: {
+        head: "Quotes by words",
+        para: "By filling in more words seperated by a comma, all quotes that contain the words will be returned",
+      },
+    };
+  },
 };
 </script>
 
@@ -55,10 +93,26 @@ export default {
     margin-top: 15px;
     padding-left: 30px;
     padding-right: 30px;
-    float: left;
+    text-align: center;
+    .ref-block {
+      width: 19%;
+      margin: 9px;
+      border-radius: 5px;
+      height: 180px;
+      float: left;
+    }
     h1,
     p {
       text-align: left;
+    }
+  }
+  @media only screen and (max-width: 1024px) {
+    .home {
+      .header-content {
+        .ref-block {
+          width: 24%;
+        }
+      }
     }
   }
   @media only screen and (max-width: 600px) {
@@ -72,10 +126,10 @@ export default {
       padding-right: 10%;
       margin-left: 10%;
     }
-    .home-information{
-        p{
-            font-size: 15px;
-        }
+    .home-information {
+      p {
+        font-size: 15px;
+      }
     }
   }
 
@@ -89,10 +143,10 @@ export default {
         font-size: 25px;
       }
     }
-    .home-information{
-        p{
-            font-size: 13px;
-        }
+    .home-information {
+      p {
+        font-size: 13px;
+      }
     }
   }
 }
